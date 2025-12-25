@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumpleaños mi vida</title>
+
+<style>
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  color: yellow;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#start {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.crawl {
+  display: none;
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  font-size: 22px;
+  line-height: 1.7;
+  animation: crawl 75s linear infinite;
+  transform-origin: 50% 100%;
+}
+
+@keyframes crawl {
+  0% {
+    bottom: -100%;
+    transform: rotateX(20deg);
+  }
+  100% {
+    bottom: 120%;
+    transform: rotateX(25deg);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="start">
+  ✨ Toca la pantalla para comenzar ✨
+</div>
+
+<audio id="music" loop>
+  <source src="starwars.mp3" type="audio/mpeg">
+</audio>
+
+<div class="crawl" id="crawl">
+
+  <p>EPISODIO I</p>
+  <p>TE DESEO UN FELIZ CUMPLEAÑOS</p>
+
+  <p>
+  🤖 <strong>MENSAJE DEL DROIDE C-3PO</strong><br><br>
+  Después de analizar millones de probabilidades,
+  este droide ha llegado a una conclusión definitiva:
+  </p>
+
+  <p>
+  La probabilidad de que seas<br>
+  una persona extraordinaria es del <strong>100%</strong>.
+  </p>
+
+  <p>
+  Hoy celebramos el nacimiento de alguien
+  que cambió por completo una galaxia:
+  <br><strong>la mía</strong>.
+  </p>
+
+  <p>
+  Aunque no pueda estar contigo hoy,
+  su amor te acompaña en cada segundo.
+  </p>
+
+  <p>
+  Recomendación oficial del droide:
+  sonríe, celebra y recuerda
+  cuánto eres amada 💛
+  </p>
+
+  <p>
+  Que la Fuerza te acompañe siempre ✨
+  </p>
+
+  <p>
+  Con amor,<br>
+  Tu Jedi ❤️
+  </p>
+
+</div>
+
+<script>
+document.getElementById("start").addEventListener("click", function() {
+  document.getElementById("music").play();
+  document.getElementById("crawl").style.display = "block";
+  this.style.display = "none";
+});
+</script>
+
+</body>
+</html>

@@ -59,8 +59,10 @@ body {
 /* FONDO ESTRELLADO VISIBLE */
 .stars {
   position: fixed;
-  width: 1px;
-  height: 1px;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
   background: white;
   box-shadow:
     50px 100px white, 120px 300px white, 200px 150px white,
@@ -68,8 +70,10 @@ body {
     700px 350px white, 850px 200px white, 950px 450px white,
     1100px 300px white, 1300px 150px white,
     150px 500px white, 350px 600px white, 550px 700px white,
-    750px 550px white, 950px 650px white;
-  animation: starsMove 100s linear infinite;
+    750px 550px white, 950px 650px white,
+    1150px 500px white, 1350px 650px white,
+    1550px 300px white, 1750px 450px white;
+  animation: starsMove 120s linear infinite;
   z-index: 0;
 }
 
@@ -77,8 +81,8 @@ body {
   content: "";
   position: absolute;
   top: 2000px;
-  width: 1px;
-  height: 1px;
+  width: 2px;
+  height: 2px;
   background: white;
   box-shadow:
     50px 100px white, 120px 300px white, 200px 150px white,
@@ -86,7 +90,9 @@ body {
     700px 350px white, 850px 200px white, 950px 450px white,
     1100px 300px white, 1300px 150px white,
     150px 500px white, 350px 600px white, 550px 700px white,
-    750px 550px white, 950px 650px white;
+    750px 550px white, 950px 650px white,
+    1150px 500px white, 1350px 650px white,
+    1550px 300px white, 1750px 450px white;
 }
 
 @keyframes starsMove {
@@ -174,6 +180,7 @@ document.getElementById("start").addEventListener("click", function() {
 
 </body>
 </html>
+
 
 
 

@@ -6,17 +6,15 @@
 <title>Feliz cumpleaños mi vida</title>
 
 <style>
-/* CONFIGURACIÓN GENERAL */
 body {
   margin: 0;
   background: black;
   overflow: hidden;
-  color: yellow;
+  color: #f5d76e;
   font-family: Arial, sans-serif;
   text-align: center;
 }
 
-/* MENSAJE INICIO */
 #start {
   position: absolute;
   top: 45%;
@@ -26,7 +24,6 @@ body {
   cursor: pointer;
 }
 
-/* TEXTO STAR WARS */
 .crawl {
   display: none;
   position: absolute;
@@ -39,7 +36,6 @@ body {
   z-index: 2;
 }
 
-/* ANIMACIÓN TEXTO */
 @keyframes crawl {
   0% {
     transform: translateY(0) rotateX(20deg);
@@ -51,74 +47,63 @@ body {
   }
 }
 
-/* FONDO ESTRELLADO */
-.stars, .stars2, .stars3 {
+.stars {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: transparent;
-  pointer-events: none;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    50px 100px white, 120px 300px white, 200px 150px white,
+    300px 400px white, 450px 250px white, 600px 100px white,
+    700px 350px white, 850px 200px white, 950px 450px white,
+    1100px 300px white, 1300px 150px white,
+    150px 500px white, 350px 600px white, 550px 700px white,
+    750px 550px white, 950px 650px white,
+    1150px 500px white, 1350px 650px white,
+    1550px 300px white, 1750px 450px white;
+  animation: starsMove 120s linear infinite;
   z-index: 0;
 }
 
-/* ESTRELLAS PEQUEÑAS */
-.stars {
-  background-image:
-    radial-gradient(1px 1px at 20px 30px, white, transparent),
-    radial-gradient(1px 1px at 40px 70px, white, transparent),
-    radial-gradient(1px 1px at 90px 40px, white, transparent),
-    radial-gradient(1px 1px at 130px 80px, white, transparent),
-    radial-gradient(1px 1px at 160px 30px, white, transparent);
-  background-size: 200px 200px;
-  animation: moveStars 60s linear infinite;
+.stars::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    50px 100px white, 120px 300px white, 200px 150px white,
+    300px 400px white, 450px 250px white, 600px 100px white,
+    700px 350px white, 850px 200px white, 950px 450px white,
+    1100px 300px white, 1300px 150px white,
+    150px 500px white, 350px 600px white, 550px 700px white,
+    750px 550px white, 950px 650px white,
+    1150px 500px white, 1350px 650px white,
+    1550px 300px white, 1750px 450px white;
 }
 
-/* ESTRELLAS MEDIANAS */
-.stars2 {
-  background-image:
-    radial-gradient(2px 2px at 50px 100px, white, transparent),
-    radial-gradient(2px 2px at 150px 150px, white, transparent),
-    radial-gradient(2px 2px at 100px 50px, white, transparent);
-  background-size: 300px 300px;
-  animation: moveStars 120s linear infinite;
-}
-
-/* ESTRELLAS GRANDES */
-.stars3 {
-  background-image:
-    radial-gradient(3px 3px at 200px 200px, white, transparent),
-    radial-gradient(3px 3px at 300px 100px, white, transparent);
-  background-size: 400px 400px;
-  animation: moveStars 180s linear infinite;
-}
-
-@keyframes moveStars {
+@keyframes starsMove {
   from { transform: translateY(0); }
-  to { transform: translateY(-200px); }
+  to { transform: translateY(-2000px); }
 }
 </style>
 </head>
 
 <body>
 
-<!-- FONDO -->
 <div class="stars"></div>
-<div class="stars2"></div>
-<div class="stars3"></div>
 
-<!-- MENSAJE INICIAL -->
 <div id="start">
   ✨ Toca la pantalla por favor ✨
 </div>
 
-<!-- MÚSICA -->
 <audio id="music" loop>
   <source src="starwars.mp3" type="audio/mpeg">
 </audio>
 
-<!-- TEXTO -->
 <div class="crawl" id="crawl">
 
 <p>EPISODIO I</p>
@@ -181,6 +166,7 @@ document.getElementById("start").addEventListener("click", function() {
 
 </body>
 </html>
+
 
 
 

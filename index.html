@@ -26,20 +26,22 @@ body {
 .crawl {
   display: none;
   position: absolute;
-  top: 100%;
+  bottom: -100%;
   width: 100%;
   font-size: 22px;
   line-height: 1.7;
-  animation: crawl 90s linear forwards;
+  animation: crawl 75s linear infinite;
   transform-origin: 50% 100%;
 }
-  
-  @keyframes crawl {
+
+@keyframes crawl {
   0% {
-    transform: translateY(0) rotateX(20deg);
+    bottom: -100%;
+    transform: rotateX(20deg);
   }
   100% {
-    transform: translateY(-220%) rotateX(25deg);
+    bottom: 120%;
+    transform: rotateX(25deg);
   }
 }
 </style>
@@ -124,6 +126,7 @@ document.getElementById("start").addEventListener("click", function() {
 </body>
 
 </html>
+
 
 
 

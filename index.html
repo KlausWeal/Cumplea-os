@@ -16,43 +16,49 @@ body {
   perspective: 400px;
 }
 
-/* MENSAJE INICIAL */
+/* MENSAJE INICIAL CENTRADO */
 #start {
   position: absolute;
-  top: 45%;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 22px;
-  z-index: 2;
+  z-index: 3;
   cursor: pointer;
+}
+
+/* CONTENEDOR DEL TEXTO */
+.scene {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 100%;
+  transform: rotateX(25deg);
 }
 
 /* TEXTO STAR WARS */
 .crawl {
-  display: none;
   position: absolute;
-  top: 100%;
+  bottom: -120%;
   width: 100%;
   font-size: 22px;
   line-height: 1.7;
   animation: crawl 35s linear forwards;
-  transform-origin: 50% 100%;
-  transform: rotateX(25deg);
   z-index: 2;
 }
 
-/* ANIMACIÓN CORREGIDA */
+/* ANIMACIÓN CORRECTA */
 @keyframes crawl {
   0% {
-    transform: rotateX(25deg) translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
-
-  80% {
+  85% {
     opacity: 1;
   }
-
   100% {
-    transform: rotateX(25deg) translateY(-200%);
+    transform: translateY(-300%);
     opacity: 0;
   }
 }
@@ -107,17 +113,16 @@ body {
 
 <div class="stars"></div>
 
-<div id="start">
-  ✨ Toca la pantalla por favor ✨
-</div>
+<div id="start">✨ Toca la pantalla por favor ✨</div>
 
 <audio id="music" loop>
   <source src="starwars.mp3" type="audio/mpeg">
 </audio>
 
-<div class="crawl" id="crawl">
+<div class="scene" id="scene">
+  <div class="crawl">
 
-<p>EPISODIO I</p>
+    <p>EPISODIO I</p>
   <p>EL NACIMIENTO DE UNA GALAXIA</p>
 
   <p>
@@ -165,13 +170,13 @@ body {
   Que la Fuerza siempre esté contigo.
   </p>
 
-
+  </div>
 </div>
 
 <script>
 document.getElementById("start").addEventListener("click", function() {
   document.getElementById("music").play();
-  document.getElementById("crawl").style.display = "block";
+  document.getElementById("scene").style.display = "block";
   this.style.display = "none";
 });
 </script>
